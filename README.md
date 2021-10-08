@@ -35,30 +35,30 @@ The final analysis of the election data showed the following:
  ## Election-Audit Summary
  As you can see below, the output results of the script provide accurately detailed analysis of the election results in an easy to read format.
  
- Election Results
--------------------------
-Total Votes: 369,711
--------------------------
+    Election Results
+    -------------------------
+    Total Votes: 369,711
+    -------------------------
 
-County Votes:
-Jefferson: 10.5% (38,855)
-Denver: 82.8% (306,055)
-Arapahoe: 6.7% (24,801)
--------------------------
-Largest County Turnout: Denver
--------------------------
-Charles Casper Stockham: 23.0% (85,213)
-Diana DeGette: 73.8% (272,892)
-Raymon Anthony Doane: 3.1% (11,606)
--------------------------
-Winner: Diana DeGette
-Winning Vote Count: 272,892
-Winning Percentage: 73.8%
--------------------------
+    County Votes:
+    Jefferson: 10.5% (38,855)
+    Denver: 82.8% (306,055)
+    Arapahoe: 6.7% (24,801)
+    -------------------------
+    Largest County Turnout: Denver
+    -------------------------
+    Charles Casper Stockham: 23.0% (85,213)
+    Diana DeGette: 73.8% (272,892)
+    Raymon Anthony Doane: 3.1% (11,606)
+    -------------------------
+    Winner: Diana DeGette
+    Winning Vote Count: 272,892
+    Winning Percentage: 73.8%
+    -------------------------
  
  The written code can be repurposed depending on the data provided. The variables, list, and created dictionaries can be used with most datasets pertaining to election resulst.
  
-...
+```
 #Candidate Options and candidate votes.
 candidate_options = []
 candidate_votes = {}
@@ -76,11 +76,11 @@ winning_percentage = 0
 largest_county = ""
 largest_county_voter_turnout = 0
 largest_county_percentage = 0
-...
+```
 
 The use of the following for loop captures the county information from the created county dictionary. The code ends with the ability to write this information to the file for easier reading:
 
-...    
+```    
     for county in county_list:
         #Retrieve the county vote count.
         county_vote = county_votes.get(county)
@@ -107,7 +107,7 @@ The use of the following for loop captures the county information from the creat
 
     #Save the county with the largest turnout to a text file.
     txt_file.write(winning_county)
-...
+```
 
 All in all, I am satisfied with the outcomes of this project and feel that repurposing for any election analysis need would please whomever needed to utilize this.
  
