@@ -78,7 +78,7 @@ largest_county_voter_turnout = 0
 largest_county_percentage = 0
 ```
 
-The use of the following for loop captures the county information from the created county dictionary. The code ends with the ability to write this information to the file for easier reading:
+The use of the following for loop captures the county information from the created county dictionary. There is a similar for loop utilized for the candidate information as well. The code ends with the ability to write this information to the file for easier reading:
 
 ```    
     for county in county_list:
