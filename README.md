@@ -35,56 +35,77 @@ The final analysis of the election data showed the following:
  ## Election-Audit Summary
  As you can see below, the output results of the script provide accurately detailed analysis of the election results in an easy to read format.
  
- ![Analysis](https://github.com/rbinghamjr/Election_Analysis/analysis/blob/main/elections_analysis.txt)
+ Election Results
+-------------------------
+Total Votes: 369,711
+-------------------------
+
+County Votes:
+Jefferson: 10.5% (38,855)
+Denver: 82.8% (306,055)
+Arapahoe: 6.7% (24,801)
+-------------------------
+Largest County Turnout: Denver
+-------------------------
+Charles Casper Stockham: 23.0% (85,213)
+Diana DeGette: 73.8% (272,892)
+Raymon Anthony Doane: 3.1% (11,606)
+-------------------------
+Winner: Diana DeGette
+Winning Vote Count: 272,892
+Winning Percentage: 73.8%
+-------------------------
  
  The written code can be repurposed depending on the data provided. The variables, list, and created dictionaries can be used with most datasets pertaining to election resulst.
- ...
- # Candidate Options and candidate votes.
+ 
+...
+#Candidate Options and candidate votes.
 candidate_options = []
 candidate_votes = {}
 
-# 1: Create a county list and county votes dictionary.
+Create a county list and county votes dictionary.
 county_list = []
 county_votes = {}
 
-# Track the winning candidate, vote count and percentage
+#Track the winning candidate, vote count and percentage
 winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
 
-# 2: Track the largest county and county voter turnout.
+#Track the largest county and county voter turnout.
 largest_county = ""
 largest_county_voter_turnout = 0
 largest_county_percentage = 0
 ...
 
 The use of the following for loop captures the county information from the created county dictionary. The code ends with the ability to write this information to the file for easier reading:
+
 ...    
     for county in county_list:
-        # 6b: Retrieve the county vote count.
+        #Retrieve the county vote count.
         county_vote = county_votes.get(county)
         # 6c: Calculate the percentage of votes for the county.
         county_vote_percentage = float(county_vote) / float(total_votes) * 100
 
-         # 6d: Print the county results to the terminal.
+        #Print the county results to the terminal.
         county_results = f"{county}: {county_vote_percentage:.1f}% ({county_vote:,})\n"
         print(county_results)
-         # 6e: Save the county votes to a text file.
+        #Save the county votes to a text file.
         txt_file.write(county_results)
-         # 6f: Write an if statement to determine the winning county and get its vote count.
+        #Write an if statement to determine the winning county and get its vote count.
         if (county_vote > largest_county_voter_turnout) and (county_vote_percentage > largest_county_percentage):
             largest_county_voter_turnout = county_vote
             largest_county_percentage = county_vote_percentage
             largest_county = county
 
-    # 7: Print the county with the largest turnout to the terminal.
+    #Print the county with the largest turnout to the terminal.
     winning_county = (
         f"-------------------------\n"
         f"Largest County Turnout: {largest_county}\n"
         f"-------------------------\n")
     print(winning_county)
 
-    # 8: Save the county with the largest turnout to a text file.
+    #Save the county with the largest turnout to a text file.
     txt_file.write(winning_county)
 ...
 
